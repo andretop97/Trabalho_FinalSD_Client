@@ -2,23 +2,23 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #282c34;
+  background-color: #202020;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  color: #ffffffff;
+  color: rgb(236, 236, 236);
 }
 
 .container-header {
   height: 10vh;
-
+  position: absolute;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   justify-self: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .home-header-title {
@@ -49,8 +49,9 @@ div .operation {
   display: flex;
 
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   border: 20px solid rgba(255, 0, 0, 0);
+  justify-content: center;
 }
 
 .container-fields {
@@ -80,29 +81,36 @@ label {
 .buttons-container {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 20px;
+
 }
 
-.button-info {
+.buttons-container button{
+  margin: 0px 10px;
+}
+
+button {
   display: flex;
   width: 100%;
   justify-content: center;
   padding: 5px 5px;
   border: 0;
   margin: 2px 0;
-  background-color: rgb(102, 144, 199);
-  color: black;
-  border-radius: 10px;
-  box-shadow: rgba(255, 0, 0, 0.1);
+  background-color: rgb(49, 49, 49);
+  border-radius: 5px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+  color: rgb(236, 236, 236);
+  font-weight: 100;
+
 }
 
-.button-info:hover {
-  background-color: rgb(60, 97, 145);
+button:hover {
+  background-color: rgb(62, 62, 62);
 }
 
-.button-info:focus {
-  background-color: rgb(60, 97, 145);
+button:focus {
+  background-color: rgb(62, 62, 62);
   border-radius: 15px;
 }
 
@@ -110,7 +118,7 @@ label {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: blue;
+
 }
 
 .key-column {

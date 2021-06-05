@@ -37,7 +37,6 @@ function Account(props) {
       return (
         <button
           key={index}
-          className='button-info'
           type='button'
           onClick={() => {
             handleSetSelectedUser(user);
