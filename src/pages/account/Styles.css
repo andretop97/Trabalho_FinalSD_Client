@@ -35,24 +35,30 @@
 }
 .container-info {
   display: flex;
-
+  width: 30vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
+
+/* .container-info p{
+  
+} */
+
 
 div .operation {
   display: flex;
 
   flex-direction: column;
   align-items: flex-start;
-  border: 20px red;
+  border: 20px solid rgba(255, 0, 0, 0);
 }
 
 .container-fields {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: baseline;
+  width: 40vw;
 }
 
 .container-fields p,
@@ -62,7 +68,7 @@ label {
 }
 
 .container-fields input {
-  width: 100%;
+  width: 150px;
   background: #f5f8fa;
   border: 1px solid #d3e2e5;
   border-radius: 20px;
@@ -71,23 +77,49 @@ label {
 
   padding: 0 16px;
 }
-.key-colunm {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
 
-.value-colunm {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
 .buttons-container {
   display: flex;
   width: 100%;
   justify-content: space-around;
   margin: 20px;
+}
+
+.button-info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 5px 5px;
+  border: 0;
+  margin: 2px 0;
+  background-color: rgb(102, 144, 199);
+  color: black;
+  border-radius: 10px;
+  box-shadow: rgba(255, 0, 0, 0.10);
+}
+
+.button-info:hover {
+  background-color: rgb(60, 97, 145);
+}
+
+.button-info:focus {
+  background-color: rgb(60, 97, 145);
+  border-radius:  15px;
+}
+
+.batata {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: blue;
+}
+
+.key-column {
+  display: flex;
+  width: 50%;
+}
+
+.value-column {
+  display: flex;
+  width: 50%;
 }
