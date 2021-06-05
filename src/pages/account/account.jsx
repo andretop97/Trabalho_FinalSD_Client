@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { api, getIp } from "../../services/api";
-import "./Styles.css";
+import React, { useEffect, useState } from 'react';
+import CurrencyInput from 'react-currency-input';
+import { api, getIp } from '../../services/api';
+import './Styles.css';
 
 const userModel = {
   balance: 0,
-  name: "",
-  bank: "",
+  name: '',
+  bank: '',
   agencyNumber: 0,
   accountNumber: 0,
   creditCardNumber: 0,
-  ip: "",
+  ip: '',
 };
 
 function Account(props) {
@@ -25,7 +26,7 @@ function Account(props) {
     const ip = await getIp.get().catch((err) => {
       console.log(err);
     });
-    const response = await api.post("/users", ip.data);
+    const response = await api.post('/users', ip.data);
     const { me, allUserWithOutMe } = response.data;
     setUser(...me);
     setAllUserWithOutMe(allUserWithOutMe);
@@ -36,8 +37,8 @@ function Account(props) {
       return (
         <button
           key={index}
-          className="button-info"
-          type="button"
+          className='button-info'
+          type='button'
           onClick={() => {
             handleSetSelectedUser(user);
           }}
@@ -49,13 +50,13 @@ function Account(props) {
   }
 
   function handleSetSelectedUser(selected) {
-    selectedUser.ip === ""
+    selectedUser.ip === ''
       ? setSelectedUser(selected)
       : setSelectedUser(userModel);
   }
 
   function checkBalance() {
-    user.balance - value > 0 ? transfer() : alert("Saldo insuficiente");
+    user.balance - value > 0 ? transfer() : alert('Saldo insuficiente');
   }
 
   async function transfer() {
@@ -66,70 +67,68 @@ function Account(props) {
     };
 
     console.log(data);
-    const batata = await api
-      .post("/deposit", data)
+    await api
+      .post('/deposit', data)
       .then(async () => {
         await getAllInfo();
-        alert("Transferencia bem sucedida");
+        alert('Transferencia bem sucedida');
         handleSetSelectedUser(userModel);
       })
       .catch((err) => {
         console.log(err);
       });
-
-    console.log(batata);
   }
 
   return (
-    <div className="container-home">
-      <header className="container-header">
-        <h1 className="home-header-title">
+    <div className='container-home'>
+      <header className='container-header'>
+        <h1 className='home-header-title'>
           Bem vindo ao nosso site de transferencias
         </h1>
       </header>
 
-      <body className="container-body">
-        <div className="container-info">
+      <body className='container-body'>
+        <div className='container-info'>
           <p>Nome : {user.name}</p>
           <p>Saldo : {user.balance}</p>
           <p>Banco : {user.bank}</p>
         </div>
-        <div className="container-info">
-          {selectedUser.ip === "" ? (
-            <div className="operation">
+        <div className='container-info'>
+          {selectedUser.ip === '' ? (
+            <div className='operation'>
               <p>Lista de conhecidos :</p>
               {renderUserList()}
             </div>
           ) : (
-            <div className="operation">
-              <div className="container-fields">
-                <div className="batata">
-                  <p className='key-column'>Nome : </p> <p className='value-column'>{selectedUser.name}</p>
+            <div className='operation'>
+              <div className='container-fields'>
+                <div className='row-info'>
+                  <p className='key-column'>Nome : </p>{' '}
+                  <p className='value-column'>{selectedUser.name}</p>
                 </div>
-                <div className="batata">
-                <p className='key-column'>Saldo :</p> <p className='value-column'>R$ {selectedUser.balance}</p>
+                <div className='row-info'>
+                  <p className='key-column'>Saldo :</p>{' '}
+                  <p className='value-column'>R$ {selectedUser.balance}</p>
                 </div>
-                <div className="batata">
-                <p className='key-column'>Banco :</p> <p className='value-column'>{selectedUser.bank}</p>
+                <div className='row-info'>
+                  <p className='key-column'>Banco :</p>{' '}
+                  <p className='value-column'>{selectedUser.bank}</p>
                 </div>
-                <div className="batata">
+                <div className='row-info'>
                   <label className='key-column'>Valor : </label>
-                  <input
-                    className='input-value'
-                    type="number"
-                    min="0"
-                    oninput="validity.valid||(value='');"
+                  <CurrencyInput
+                    decimalSeparator=','
+                    thousandSeparator='.'
+                    prefix='R$'
                     value={value}
-                    onChange={(event) => {
-                      event.target.value > 0
-                        ? setValue(event.target.value)
-                        : setValue(0);
+                    onChangeEvent={(event, maskedvalue, floatvalue) => {
+                      setValue(floatvalue);
                     }}
                   />
                 </div>
               </div>
 
-              <div className="buttons-container">
+              <div className='buttons-container'>
                 <button
                   onClick={() => {
                     checkBalance();
@@ -145,7 +144,7 @@ function Account(props) {
           )}
         </div>
       </body>
-      <footer className="container-footer"></footer>
+      <footer className='container-footer'></footer>
     </div>
   );
 }

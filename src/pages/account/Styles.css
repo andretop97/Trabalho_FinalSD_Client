@@ -45,7 +45,6 @@
   
 } */
 
-
 div .operation {
   display: flex;
 
@@ -95,7 +94,7 @@ label {
   background-color: rgb(102, 144, 199);
   color: black;
   border-radius: 10px;
-  box-shadow: rgba(255, 0, 0, 0.10);
+  box-shadow: rgba(255, 0, 0, 0.1);
 }
 
 .button-info:hover {
@@ -104,14 +103,14 @@ label {
 
 .button-info:focus {
   background-color: rgb(60, 97, 145);
-  border-radius:  15px;
+  border-radius: 15px;
 }
 
-.batata {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background-color: blue;
+.row-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: blue;
 }
 
 .key-column {
