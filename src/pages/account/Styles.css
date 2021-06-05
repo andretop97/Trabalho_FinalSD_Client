@@ -1,0 +1,93 @@
+.container-home {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #ffffffff;
+}
+
+.container-header {
+  height: 10vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.home-header-title {
+  size: 12;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-body {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-info {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+div .operation {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+  border: 20px red;
+}
+
+.container-fields {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.container-fields p,
+input,
+label {
+  margin: 10px 0px;
+}
+
+.container-fields input {
+  width: 100%;
+  background: #f5f8fa;
+  border: 1px solid #d3e2e5;
+  border-radius: 20px;
+  outline: none;
+  color: #5c8599;
+
+  padding: 0 16px;
+}
+.key-colunm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.value-colunm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 20px;
+}
