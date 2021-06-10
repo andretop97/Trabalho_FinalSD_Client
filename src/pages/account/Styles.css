@@ -11,8 +11,8 @@
 
 .container-header {
   height: 10vh;
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,10 +83,9 @@ label {
   width: 100%;
   justify-content: space-between;
   margin: 20px;
-
 }
 
-.buttons-container button{
+.buttons-container button {
   margin: 0px 10px;
 }
 
@@ -102,7 +101,6 @@ button {
   box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
   color: rgb(236, 236, 236);
   font-weight: 100;
-
 }
 
 button:hover {
@@ -118,7 +116,6 @@ button:focus {
   display: flex;
   flex-direction: row;
   width: 100%;
-
 }
 
 .key-column {
